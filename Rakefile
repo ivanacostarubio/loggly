@@ -17,12 +17,13 @@ Jeweler::Tasks.new do |gem|
   gem.name = "loggly"
   gem.homepage = "http://github.com/ivanacostarubio/loggly"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{ We send messages to Loggly using resque or not}
+  gem.description = %Q{ We send messages to Loggly using resque or not}
   gem.email = "ivan@bakedweb.net"
   gem.authors = ["Ivan Acosta-Rubio"]
   # dependencies defined in Gemfile
 end
+
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
