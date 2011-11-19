@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "lib/loggly.rb",
+    "loggly.gemspec",
     "test/helper.rb",
     "test/test_loggly.rb"
   ]
