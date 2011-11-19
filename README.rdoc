@@ -1,6 +1,35 @@
 = loggly
 
-Description goes here.
+It sends messages to the Loggly API. We do this using resque or without it.
+
+== INSTALL
+
+   gem install loggly
+
+== USAGE
+
+You must sublcass from Loggly and add a class method call token that return the input you get from Loggly
+
+=== For example:
+
+  class TicketLoggly < Loggly
+    def self.token
+      'token_you_get_from_loggly'
+      end
+    end
+
+
+   TicketLoggly.record("This the message")
+
+You can also pass in an optional parameter like: 
+
+   TicketLoggly.record("This is cool", Time.now.to_s)
+
+
+If you have resque installed, you can send messages using it by doing:
+
+   TicketLogglt.async_record("This will be send using resque")
+
 
 == Contributing to loggly
  
