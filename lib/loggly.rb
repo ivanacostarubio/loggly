@@ -10,7 +10,7 @@ class LogglyResque
   @queue = :loggly
 
   def self.perform(klass,message, time=nil)
-    klass.send(:send_to_loggly, message, time)
+    Loggly.send_to_loggly(message, time)
   end
 end
 
@@ -78,9 +78,6 @@ class Loggly
       puts "There was an error cueing loggly"
     end
   end
-
-
-  private
 
   # Private
   #  We use this method internally to send messages to loggly.
