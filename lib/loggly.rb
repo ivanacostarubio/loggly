@@ -10,7 +10,7 @@ class LogglyResque
   @queue = :loggly
 
   def self.perform(klass,message, time=nil)
-    klass.send(:send_to_loggly, message, time)
+    klass.camelize.constantize.send(:send_to_loggly, message, time)
   end
 end
 
@@ -71,8 +71,9 @@ class Loggly
   # This method behaves the same as record, but uses resque to send the message.
   #
   def self.async_record(message, time=nil)
+
     begin
-      Resque.enqueue(LogglyResque, self, message, time)
+      Resque.enqueue(LogglyResque, self.name, message, time)
     rescue => e
       puts e
       puts "There was an error cueing loggly"
