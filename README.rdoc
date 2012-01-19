@@ -8,7 +8,7 @@ It sends messages to the Loggly API. We do this using resque or without it.
 
 == USAGE
 
-You must sublcass from Loggly and add a class method call token that return the input you get from Loggly
+You must sublcass from Loggly and add a class method called token that returns the "input" you get from Loggly
 
 === For example:
 
