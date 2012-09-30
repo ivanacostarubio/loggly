@@ -15,8 +15,8 @@ You must sublcass from Loggly and add a class method called token that returns t
   class TicketLoggly < Loggly
     def self.token
       'token_you_get_from_loggly'
-      end
     end
+  end
 
 
    TicketLoggly.record("This the message")
